@@ -1,0 +1,423 @@
+/* 레이아웃 */
+body{
+    background: url(../img/header_bg.jpg) center top repeat-x;
+    /* background-size: cover; 필요없음 */
+}
+#header{}
+#nav{background-color: #f6fdff;}
+#title{background-color: #eaf7fd;}
+#contents .container{
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+#cont_left{
+    width: 250px;
+    float: left;
+}
+#cont_center{
+    overflow: hidden;
+    /* min-height값을 줬기 때문에 #contents에 overflow: hidden을 빼줘도됨 */
+    min-height: 1300px;
+    /* background는 padding 영역 왼쪽부터 채워짐 */
+    margin-right: 250px;
+    border-right: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+}
+#cont_right{
+    width: 250px;
+    position: absolute;
+    right: 0; top: 0;
+}
+#footer{
+    border-top: 1px solid #dbdbdb;
+}
+
+/* 컨테이너 */
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    /* background: rgb(0,0,0,0.3);  */
+    position:relative;
+}
+
+/* 헤더 */
+.header{
+    height: 327px;
+    font-family: 'Abel', sans-serif;
+}
+.header .header_menu ul{
+    list-style:none;
+    text-align: right;
+}
+.header .header_menu ul li{
+    display: inline-block;
+}
+.header .header_menu ul li a{
+    text-decoration: none;
+    display: block;
+    padding: 8px 0 6px 10px;
+    color: #fff;
+    /* color값을 ccc로 바꾸는데 0.3초 동안 ease 효과를 적용해라. */
+    transition: color 0.3s ease;
+}
+.header .header_menu ul li a:hover{
+    color: #ccc;
+}
+
+.header .header_tit{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 55px;
+}
+.header .header_tit h1{
+    background: #51b0dc;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900; 
+    padding: 5px 30px 5px 30px; 
+    display: inline-block;
+    letter-spacing: 2px;
+    transition: box-shadow 0.25s ease-in-out;
+}
+.header .header_tit h1:hover{
+    /* 새로 배우는거 */
+    box-shadow: 
+        inset -9em 0 0 0 #257fac,
+        inset 9em 0 0 0 #257fac;
+}
+.header .header_tit a{
+    background: #4a9abf; 
+    color: #fff;
+    font-size: 16px; 
+    display: inline-block;
+    padding: 10px 20px 10px 20px; 
+    margin-top: -7px;
+    transition: box-shadow 0.25s ease-in-out;
+}
+.header .header_tit a:hover{
+    box-shadow:
+        inset 0 0 0 5px rgba(75,154,191,0.9),
+        inset 0 0 0 100px rgba(0,0,0,0.1);
+}
+
+.header .header_icon{
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 45px;
+}
+.header .header_icon ul li{
+    display: inline;
+    margin: 0 2px;
+}
+.header .header_icon ul li a{
+    background-color: #3192bf;
+    border-radius: 50%;
+    width: 60px;  height: 60px;
+    color: #fff;
+    display: inline-block;
+    font-size: 35px;
+    line-height: 60px;
+    transition: box-shadow 0.25s ease-in-out;
+    position: relative;
+}
+.header .header_icon ul li a:hover{
+    box-shadow: 
+        inset 0 0 0 5px rgba(75,154,191,0.9),
+        inset 0 0 0 100px rgba(0,0,0,0.1);
+}
+.header .header_icon ul li a span{
+    position: absolute;
+    left: 50%; top: -40px;
+    line-height: 1.6;
+    transform: translate(-50%);
+    font-size: 12px;
+    background: #3192bf;
+    padding: 3px 9px;
+    border-radius: 6px 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.header .header_icon ul li a span::before{
+    content: '';
+    position: absolute;
+    left: 50%; bottom: -5px;
+    transform: translate(-50%);
+    border-top: 5px solid #3192bf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.header .header_icon ul li a:hover span{
+    opacity: 1;
+    top: -33px;
+}
+
+/* 네비게이션 */
+.nav{
+    overflow: hidden;
+    padding: 25px 0;
+    display: none;
+}
+.nav > div{
+    float: left;
+    width: 40%;
+}
+.nav > div:last-child{
+    width: 20%;
+}
+.nav ol{
+    overflow: hidden;
+}
+.nav > div ol li{
+    float: left;
+    width: 50%;
+    padding-left: 8px;
+    box-sizing: border-box;
+    position: relative;
+}
+.nav > div ol li::before{
+    content: "";
+    width: 3px; height: 3px;
+    background-color: #25a2d0;
+    border-radius: 50%;
+    position: absolute;
+    left: 0; top: 10px;
+}
+.nav > div:last-child ol li{
+    width: 100%;
+}
+.nav > div h3{
+    font-size: 18px;
+    color: #25a2d0;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.nav > div ol li a{
+    position: relative;
+}
+.nav > div ol li a:after{
+    content: "";
+    width: 0; height: 1px;
+    background: #25aad0;
+    transition: all .2s ease-in-out;
+    position: absolute;
+    bottom: 0; left: 0;
+    display: inline-block;
+}
+.nav > div ol li:hover a:after{
+    width: 100%;
+}
+
+/* 타이틀 */
+.title{
+    position: relative;
+    text-align: center;
+}
+.title h2{
+    font-family: 'Nanum Brush Script', cursive; font-size: 39px; color: #0093bd; padding: 5px 0;
+}
+.title .btn{
+    position: absolute;
+    right: 0; top: 5px;
+    width: 60px; height: 60px;
+    font-size: 35px;
+    line-height: 60px;
+    background: #3192bf; color: #fff;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+}
+.title .btn:hover{
+    box-shadow: 
+        /* 투명도(0~1) 0에 가까울수록 투명해진다. */
+        inset 0 0 0 3px  rgba(71,154,191,0.9),
+        inset 0 0 0 100px rgba(0,0,0,0.1);
+}
+
+/* 컨텐츠 */
+.column{
+    padding: 15px; 
+    border-bottom: 1px solid #dbdbdb;
+}
+.column .col_tit{
+    font-size: 20px;
+    color:#2f7fa6;
+    padding-bottom: 5px;
+}
+.column .col_decs{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #dbdbdb;
+    color:#878787;
+    line-height: 18px;
+}
+
+.column.col1{}
+.column.col2{}
+.column.col3{border-bottom:0;}
+.column.col4{}
+.column.col5{}
+.column.col6{border-bottom:0;}
+.column.col7{}
+.column.col8{}
+.column.col9{border-bottom:0;}
+
+/* 메뉴 */
+.column.col1 .menu ul li{
+    position: relative;
+}
+/* 디테일 : li에게 여러가지 속성을 줘도 되지만 a에게 속성을 주고 a를 block화 시켜버리면 박스 영역을 클릭하기만 해도 다른 사이트로 이동할 수 있음. 
+하나 알아갑니다. 난 처음에 li에게 줬음*/
+.column.col1 .menu ul li a{
+    font-size: 16px;
+    color: #878787;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px;
+    display: block;
+    transition: box-shadow 0.34s ease, background 0.34s ease;
+}
+.column.col1 .menu ul li a:hover{
+    /* 투명도(0~1) 0에 가까울수록 투명해진다. */
+    box-shadow: inset 180px 0 0 0  rgba(36,130,174,0.7);
+    color: #fff;
+    background: rgba(36,130,174,0.9);
+}
+.column.col1 .menu ul li a i{
+    position: absolute;
+    right: 10px; top: 15px;
+}
+
+/* 게시판 */
+/* 한 줄 효과 */
+.column.col2 .notice1{
+    position: relative;
+}
+.column.col2 .notice1 h5{
+    font-size: 14px;
+    color:#2f7fa6;
+    padding-bottom: 5px;
+}
+.column.col2 .notice1 ul li{
+    overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;
+    position: relative;
+    padding-left: 8px;
+}
+.column.col2 .notice1 ul li::before{
+    content: "";
+    width: 3px; height: 3px;
+    background: #449ce2;
+    position: absolute;
+    left: 0; top: 6px;
+    border-radius: 50%;
+}
+.column.col2 .notice1 .more{
+    position: absolute;
+    right: 0; top: 3px;
+    color: #878787;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+/* 두 줄 효과 */
+.column.col2 .notice2{
+    position: relative;
+}
+.column.col2 .notice2 h5{
+    font-size: 14px;
+    color:#2f7fa6;
+    padding-bottom: 5px;
+}
+.column.col2 .notice2 ul li{
+    /* 두 줄 효과 차이*/
+    overflow: hidden; text-overflow: ellipsis;
+    /* -webkit이란? 웹 브라우저를 만드는 데 기반ㅇ르 제공하는 오픈 소스 응용 프로그램 프레임워크 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    position: relative;
+    padding-left: 8px;
+    padding-bottom: 3px; 
+    max-height: 40px; /* ie 버전때문에*/
+}
+.column.col2 .notice2 ul li::before{
+    content: "";
+    width: 3px; height: 3px;
+    background: #449ce2;
+    position: absolute;
+    left: 0; top: 6px;
+    border-radius: 50%;
+}
+.column.col2 .notice2 .more{
+    position: absolute;
+    right: 0; top: 3px;
+    color: #878787;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+
+
+/* 미디어 쿼리 */
+/* 화면 너비 0~1220px 모니터 */
+@media (max-width: 1220px){
+    .container{width: 100%;}
+    .row {padding: 0 15px;}
+    #contents .container{border: 0}
+    .title .btn{right: 5px;}
+}
+
+/* 화면 너비 0~1024px  */
+@media (max-width: 1024px){
+
+}
+
+/* 화면 너비 0~960px 태블릿 */
+@media (max-width: 960px){
+    /* position의 기본값은 static */
+    #cont_right{position:static; width: 100%; border-top: 1px solid #dbdbdb;}
+    #cont_center{margin-right: 0; border-right:0;}
+    .nav > div{float:none; width: 100%;}
+    .nav > div:last-child{width: 100%;}
+    .nav > div ol li{width: 33.33333%;}
+    .nav > div:last-child ol li{width: 33.33333%;}
+    .nav > div ol{margin-bottom: 10px;}
+}
+
+/* 화면 너비 0~768px */
+@media (max-width: 768px){
+    #cont_left{float:none; width: 100%;}
+    #cont_center{border-left: 0;}
+    .column.col3{border-bottom: 1px solid #dbdbdb;}
+    .column.col3{border-bottom: 1px solid #dbdbdb;}
+}
+
+/* 화면 너비 0~600px 모바일 */
+@media (max-width: 600px){
+    .header{height: auto;}
+    .header .header_tit{display: none;}
+    .header .header_icon{display: none;}
+    .title .btn{display: none;}
+
+    .nav > div ol li{width: 50%;}
+    .nav > div:last-child ol li{width: 50%;}
+
+    .column.col1 .col_tit{display:none;}
+    .column.col1 .col_decs{display:none;}
+    .column.col1 .menu ul li a i{display: none;}
+    .column.col1{padding: 0; border-bottom: 0;}
+    .column.col1 .menu ul{overflow: hidden;}
+    .column.col1 .menu li{float: left; width: 33.3333%; text-align: center; border-right: 1px solid #dbdbdb; box-sizing: border-box;}
+    .column.col1 .menu li:nth-child(3n){border-right: 0;}
+    .column.col1 .menu ul li a{color:#fff; text-shadow: 0 0 5px rgba(0,0,0,0.7);}
+    .column.col1 .menu ul li a:hover{box-shadow:none; background: rgba(36,130,174,0.3);}
+    .column.col2{background: #fff;}
+}
+
+/* 화면 너비 0~480px */
+@media (max-width: 480px){
+}
+
+/* 화면 너비 0~320px */
+@media (max-width: 320px){
+    .nav > div ol li{width: 100%;}
+    .nav > div:last-child ol li{width: 100%;}
+}
